@@ -6,6 +6,10 @@ const app = express();
 // connect database
 connectDB();
 
+// init middleware (inc bodyParser which allows data to be retrieved in req.body eg in user.js)
+app.use(express.json({ extended: false }));
+
+// test / route - http://localhost:5000
 app.get('/', (req, res) => res.send('API running'));
 
 // define routes

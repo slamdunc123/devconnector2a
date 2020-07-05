@@ -20,12 +20,12 @@ app.use('/api/profile', require('./routes/api/profile')); // http://localhost:50
 app.use('/api/posts', require('./routes/api/posts')); // http://localhost:5000/api/posts
 
 // serve static assets in production
-if (process.env.NOD_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
 	// set static folder
 	app.use(express.static('client/build'));
 
 	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(__dirname, 'clinet', 'build', 'index.html'));
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
 
